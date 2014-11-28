@@ -9,5 +9,10 @@ trait GeneralRoute extends HttpService {
 			get {
 				complete("Hello World!")
 			}
+		} ~ 
+		path("team") {
+			path("player") {
+				complete("I'm a football player")
+			}
 		}
 }
