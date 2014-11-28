@@ -2,17 +2,15 @@ package magic.gol
 
 import spray.routing._
 
-trait GeneralRoute extends HttpService {
+import routes._
+
+trait GeneralRoute extends HttpService
+	with TeamRoute {
 
 	def route = 
 		path("hello") {
 			get {
 				complete("Hello World!")
 			}
-		} ~ 
-		path("team") {
-			path("player") {
-				complete("I'm a football player")
-			}
-		}
+		} ~ teamRoute
 }
